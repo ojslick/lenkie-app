@@ -1,0 +1,53 @@
+{
+    "extends": ["react-app", "prettier"],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest": true,
+        "es6": true
+    },
+    "plugins": ["react-hooks"],
+    "rules": {
+        "no-console": "off",
+        "no-unused-vars": "warn",
+        "no-extra-semi": "warn",
+        "no-multi-spaces": "warn",
+        "semi": ["warn", "always"],
+        "quotes": ["warn", "single"],
+        "guard-for-in": "off",
+        "require-await": "warn",
+        "no-empty-pattern": "off",
+        "react/prop-types": "warn",
+        "react/display-name": "off",
+        "react/no-find-dom-node": "warn",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/jsx-curly-spacing": ["warn", { "when": "never", "children": true }],
+        "react/function-component-definition": ["warn", { "unnamedComponents": "arrow-function" }],
+        "react/jsx-curly-brace-presence": ["warn", "never"],
+        "react/jsx-tag-spacing": ["warn", { "beforeClosing": "never" }],
+        "react/jsx-first-prop-new-line": ["warn", "multiline-multiprop"],
+        "react/jsx-equals-spacing": "warn",
+        "react/jsx-indent": "warn",
+        "react/jsx-no-duplicate-props": "error",
+        "react/jsx-indent-props": "warn",
+        "no-extra-boolean-cast": "off",
+        "jsx-quotes": ["warn", "prefer-double"],
+        "keyword-spacing": "warn",
+        "arrow-spacing": "warn",
+        "array-bracket-spacing": ["warn", "never"],
+        "object-curly-spacing": ["warn", "always"],
+        "computed-property-spacing": ["warn", "never"],
+        "space-in-parens": ["warn", "never"],
+        "comma-spacing": ["warn", { "before": false, "after": true }],
+        "space-infix-ops": "warn",
+        "key-spacing": ["warn", { "mode": "strict" }],
+        "template-curly-spacing": "warn",
+        "no-mixed-operators": "warn",
+        "no-useless-computed-key": "warn",
+        "import/no-anonymous-default-export": "off"
+    }
+}
