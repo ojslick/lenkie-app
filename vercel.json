@@ -1,0 +1,13 @@
+{
+    "builds": [{ "src": "package.json", "use": "@vercel/node" }],
+    "build": {
+        "env": {
+            "CI": "true"
+        }
+    },
+    "git": {
+        "deploymentEnabled": {
+            "main": false
+        }
+    }
+}
