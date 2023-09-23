@@ -59,7 +59,7 @@
       "src/**/*.{js,jsx}",
       "!<rootDir>/node_modules/",
       "!<rootDir>/src/index.js",
-      "!<rootDir>/src/reportWebVital.js"
+      "!<rootDir>/src/reportWebVitals.js"
     ],
     "coverageThreshold": {
       "global": {
