@@ -33,6 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Install Dependencies
+      run: npm ci
+
     - name: Deploy to Vercel
       run: vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
       env:
