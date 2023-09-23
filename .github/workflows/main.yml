@@ -34,7 +34,7 @@ jobs:
     
     steps:
     - name: Install Dependencies
-      run: npm ci
+      run: npm install
 
     - name: Deploy to Vercel
       run: vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
