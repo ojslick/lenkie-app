@@ -34,6 +34,6 @@ jobs:
     
     steps:
     - name: Deploy to Vercel
-      run: vercel --prod --yes
+      run: vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
