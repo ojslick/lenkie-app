@@ -58,7 +58,8 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!<rootDir>/node_modules/",
-      "!<rootDir>/src/index.js"
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/reportWebVital.js"
     ],
     "coverageThreshold": {
       "global": {
