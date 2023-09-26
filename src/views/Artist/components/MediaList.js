@@ -36,7 +36,7 @@ export function MediaList({ title, mediaData, showDuration, showReleaseDate }) {
             <Typography variant="titleMedium" gutterBottom>
                 {title}
             </Typography>
-            <List sx={{ maxHeight: '240px', overflow: 'auto' }}>
+            <List sx={{ maxHeight: '244px', overflow: 'auto' }}>
                 {mediaData.map((data, index) => (
                     <StyledListItem key={data.id}>
                         <Box flexGrow={0} marginRight={2}>
