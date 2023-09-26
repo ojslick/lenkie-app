@@ -10,9 +10,9 @@ import debounce from 'lodash/debounce';
 import { isEmpty } from 'lodash';
 import Pagination from '@mui/material/Pagination';
 
-import { ArtistCard } from '../components/ArtistCard';
-import { Typography } from '../components/Typography';
-import { getArtists } from '../services';
+import { ArtistCard } from './components/ArtistCard';
+import { Typography } from '../../components/Typography';
+import { getArtists } from '../../services';
 import { toast } from 'react-toastify';
 
 export function Home() {
@@ -57,7 +57,7 @@ export function Home() {
     };
 
     return (
-        <main>
+        <>
             <Container maxWidth="sm" sx={{ mt: 12 }}>
                 <TextField
                     variant="outlined"
@@ -109,6 +109,6 @@ export function Home() {
                     <Typography variant="smallHeadline">No artist found</Typography>
                 </Container>
             )}
-        </main>
+        </>
     );
 }

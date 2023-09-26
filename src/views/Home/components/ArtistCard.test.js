@@ -1,6 +1,7 @@
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { providerRender as render, screen } from '../test-utils';
-import { mockArtists } from '../test-utils/mocks';
+import { providerRender as render, screen } from '../../../test-utils';
+
+import { mockArtists } from '../../../test-utils/mocks';
 import { ArtistCard } from './ArtistCard';
 import userEvent from '@testing-library/user-event';
 import { useNavigate } from 'react-router-dom';

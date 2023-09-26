@@ -6,8 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Tooltip from '@mui/material/Tooltip';
 
-import { pluralize } from '../utils/pluralize';
-import { Typography } from './Typography';
+import { pluralize } from '../../../utils/pluralize';
+import { Typography } from '../../../components/Typography';
 
 export function ArtistCard({ artist }) {
     const navigate = useNavigate();

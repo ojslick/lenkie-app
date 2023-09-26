@@ -2,8 +2,8 @@ import React from 'react';
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import { QueryCache } from 'react-query';
 import { Home } from './Home';
-import { providerRender as render } from '../test-utils';
-import { server } from '../mocks/server';
+import { providerRender as render } from '../../test-utils';
+import { server } from '../../mocks/server';
 import { rest } from 'msw';
 import { ToastContainer } from 'react-toastify';
 
