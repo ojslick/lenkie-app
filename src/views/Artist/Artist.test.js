@@ -66,7 +66,7 @@ test('should show error toast when fetching artist data', async () => {
 
     await waitFor(() => {
         expect(
-            screen.getByText('Something went wrong, the was an error fetching this artist')
+            screen.getByText('Something went wrong, there was an error fetching this artist')
         ).toBeInTheDocument();
     });
 });
@@ -87,7 +87,7 @@ test('should show error toast when fetching top songs', async () => {
 
     await waitFor(() => {
         expect(
-            screen.getByText('Something went wrong, the was an error fetching top songs')
+            screen.getByText('Something went wrong, there was an error fetching top songs')
         ).toBeInTheDocument();
     });
 });
@@ -108,7 +108,7 @@ test('should show error toast when fetching albums', async () => {
 
     await waitFor(() => {
         expect(
-            screen.getByText('Something went wrong, the was an error fetching albums')
+            screen.getByText('Something went wrong, there was an error fetching albums')
         ).toBeInTheDocument();
     });
 });
