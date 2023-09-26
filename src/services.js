@@ -2,6 +2,7 @@ export const getFetch = async (url) => {
     const response = await fetch(url, {
         method: 'GET',
     });
+
     if (!response.ok) {
         throw new Error(response.status);
     }

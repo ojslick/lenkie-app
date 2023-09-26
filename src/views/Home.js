@@ -13,6 +13,7 @@ import Pagination from '@mui/material/Pagination';
 import { ArtistCard } from '../components/ArtistCard';
 import { Typography } from '../components/Typography';
 import { getArtists } from '../services';
+import { toast } from 'react-toastify';
 
 export function Home() {
     const [search, setSearch] = useState('');
@@ -28,9 +29,13 @@ export function Home() {
         ],
         getArtists,
         {
+            onError: () => {
+                toast.error('Something went wrong, please try again later');
+            },
             enabled: Boolean(search),
         }
     );
+
     const totalPages = Math.ceil(artists?.total / paginationDetails.limit);
 
     useEffect(() => {

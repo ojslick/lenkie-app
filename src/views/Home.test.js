@@ -5,6 +5,7 @@ import { Home } from './Home';
 import { providerRender as render } from '../test-utils';
 import { server } from '../mocks/server';
 import { rest } from 'msw';
+import { ToastContainer } from 'react-toastify';
 
 const queryCache = new QueryCache();
 
@@ -151,4 +152,30 @@ test('should not got to another page if current page pagination button is clicke
 
     expect(screen.queryByRole('progressbar')).not.toBeInTheDocument();
     expect(screen.getByLabelText('Go to page 2')).not.toHaveClass('Mui-selected');
+});
+
+test('should show error toast if there is an error fetching the artists', async () => {
+    jest.useFakeTimers();
+    server.use(
+        rest.get('https://api.deezer.com/search/artist*', (req, res, ctx) => {
+            return res(ctx.status(500));
+        })
+    );
+    render(
+        <>
+            <Home />
+            <ToastContainer />
+        </>
+    );
+    const input = screen.getByPlaceholderText('Search for an artist...');
+    fireEvent.change(input, { target: { value: 'Burna' } });
+    act(() => {
+        jest.advanceTimersByTime(500);
+    });
+
+    await waitFor(() => {
+        expect(
+            screen.getByText('Something went wrong, please try again later')
+        ).toBeInTheDocument();
+    });
 });
