@@ -28,6 +28,8 @@ jobs:
 
       - name: Run Tests
         run: npm test -- --coverage
+        env:
+          REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
 
       - name: Deploy to Vercel
         run: vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
