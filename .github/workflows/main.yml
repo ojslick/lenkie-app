@@ -31,6 +31,17 @@ jobs:
         env:
           REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
 
+      - name: Upload sourcemaps to Sentry
+        uses: getsentry/action-upload-sourcemaps@v2
+        with:
+          sentry-cli-token: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          organization-slug: ${{ secrets.SENTRY_ORG }}
+          project-slug: ${{ secrets.SENTRY_PROJECT }}
+          include: build/static/js/*.js.map
+          rewrite: true
+          dist: ${{ github.run_number }}
+
+
       - name: Deploy to Vercel
         run: vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
         env:

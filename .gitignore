@@ -25,3 +25,5 @@ yarn-error.log*
 .env.development
 .env.test
 .env.production
+# Sentry Auth Token
+.sentryclirc
