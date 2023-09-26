@@ -1,7 +1,11 @@
+import Container from '@mui/material/Container';
+
 export function Artist() {
     return (
-        <div>
-            <h1>Artist</h1>
-        </div>
+        <main>
+            <Container maxWidth="lg">
+                <h1>Artist</h1>
+            </Container>
+        </main>
     );
 }

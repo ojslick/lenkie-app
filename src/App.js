@@ -1,15 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home } from './views/Home';
-import { Artist } from './views/Artist';
+import { ThemeProvider } from '@mui/material/styles';
+import { Routes } from './Routes';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { theme } from './theme';
+import { Navbar } from './components/Navbar';
+import { BrowserRouter } from 'react-router-dom';
 
 export function App() {
+    const queryClient = new QueryClient();
     return (
-        <Router>
-            <Routes>
-                <Route path="/" index element={<Home />} />
-                <Route path="/artist/:artistId" element={<Artist />} />
-            </Routes>
-        </Router>
+        <ThemeProvider theme={theme}>
+            <QueryClientProvider client={queryClient}>
+                <BrowserRouter>
+                    <Navbar />
+                    <Routes />
+                </BrowserRouter>
+            </QueryClientProvider>
+        </ThemeProvider>
     );
 }
