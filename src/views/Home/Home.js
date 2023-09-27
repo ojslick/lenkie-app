@@ -9,8 +9,6 @@ import { useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { isEmpty } from 'lodash';
 import Pagination from '@mui/material/Pagination';
-import ReactGA from 'react-ga4';
-import { useLocation } from 'react-router-dom';
 
 import { ArtistCard } from './components/ArtistCard';
 import { Typography } from '../../components/Typography';
@@ -18,8 +16,6 @@ import { getArtists } from '../../services';
 import { toast } from 'react-toastify';
 
 export function Home() {
-    const location = useLocation();
-    ReactGA.send({ hitType: 'pageview', page: location, title: 'Artist Search Page' });
     const [search, setSearch] = useState('');
     const [paginationDetails, setPaginationDetails] = useState({
         limit: 20,
