@@ -31,6 +31,9 @@ jobs:
         env:
           REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
 
+      - name: Build
+        run: npm run build
+
       - name: Upload sourcemaps to Sentry
         run: |
           curl -sL https://sentry.io/get-cli/ | bash
