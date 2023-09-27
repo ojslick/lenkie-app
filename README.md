@@ -12,6 +12,20 @@ Install dependencies with:
 npm install
 ```
 
+### Environment Variables
+
+.env.development
+
+```sh
+REACT_APP_BASE_URL=https://cors-anywhere.herokuapp.com/https://api.deezer.com
+```
+
+.env.test
+
+```sh
+REACT_APP_BASE_URL=https://api.deezer.com
+```
+
 ### Running the app
 
 Run the app locally in dev mode:
