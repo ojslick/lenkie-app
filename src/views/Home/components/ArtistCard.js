@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Tooltip from '@mui/material/Tooltip';
+import ReactGA from 'react-ga4';
 
 import { pluralize } from '../../../utils/pluralize';
 import { Typography } from '../../../components/Typography';
@@ -21,7 +22,14 @@ export function ArtistCard({ artist }) {
                 flexDirection: 'column',
                 cursor: 'pointer',
             }}
-            onClick={() => navigate(`/artist/${artist.id}`)}
+            onClick={() => {
+                navigate(`/artist/${artist.id}`);
+                ReactGA.event({
+                    category: 'Artist',
+                    action: 'Clicked Artist Card',
+                    label: artist.name,
+                });
+            }}
             data-testid="artist-card"
         >
             <CardMedia

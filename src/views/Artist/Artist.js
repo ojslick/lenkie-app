@@ -6,6 +6,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import isEmpty from 'lodash/isEmpty';
 import { toast } from 'react-toastify';
+import ReactGA from 'react-ga4';
+import { useLocation } from 'react-router-dom';
 
 import { getAlbums, getArtist, getTopSongs } from '../../services';
 import { ArtistHeader } from './components/ArtistHeader';
@@ -13,6 +15,8 @@ import { MediaList } from './components/MediaList';
 import { Typography } from '../../components/Typography';
 
 export function Artist() {
+    const location = useLocation();
+    ReactGA.send({ hitType: 'pageview', page: location, title: 'Artist Search Page' });
     const { artistId } = useParams();
     const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
