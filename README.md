@@ -1,5 +1,7 @@
 # lenkie-assessment
 
+Request for cors proxy access [here](https://cors-anywhere.herokuapp.com/corsdemo) before visiting the production link below
+
 This app can be viewed here [lenkie-assessment.vercel.app](https://lenkie-assessment.vercel.app)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
