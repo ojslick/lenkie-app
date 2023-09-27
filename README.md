@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# lenkie-assessment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Install dependencies with:
 
-### `npm start`
+```sh
+npm install
+```
+
+### Running the app
+
+Run the app locally in dev mode:
+
+```sh
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Development
 
-### `npm test`
+### Lint
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run Prettier and ESLint.
 
-### `npm run build`
+```sh
+npm run lint
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm run format
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Rules can be added to `.eslintrc.js` as development progresses.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Test
 
-### `npm run eject`
+Run tests in Jest.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+npm test [options]
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## CI/CD
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### CI
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+CI uses [GitHub](https://github.com/ojslick/lenkie-assessment/tree/main/.github)
 
-## Learn More
+### Deploying web
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Vercel is used for deployments. They are continuous and deploy on every commit to `main`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Monitoring and Analytics
 
-### Code Splitting
+-   [Sentry](https://sentry.io) is used for error monitoring in this application. The build process uploads the source map to sentry
+-   Google Analytics is used to track users' activities across the app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## File Structure
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   `.github/` Github action workflows
+-   `.public/` Static files served directly by the server
+-   `src/`
+    -   `components/` Shared components used throughout the app
+    -   `features/` Standalone features that can be integrated into any view
+    -   `mocks/` Houses mock service worker set up
+        -   `handlers/` Mock service worker route handlers
+    -   `test-utils/` Contains test utility functions and mocked data
+    -   `utils/` Contains utility functions that can be used across the app
+    -   `views/` Contains top-level pages
+        -   `<View>/` Top-level page
+            -   `components/` Components unique to their scoped area      
