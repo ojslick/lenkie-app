@@ -1,4 +1,4 @@
-# lenkie-assessment
+# lenkie-app
 
 Request for cors proxy access [here](https://cors-anywhere.herokuapp.com/corsdemo) before visiting the production link below
 
